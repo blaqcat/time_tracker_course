@@ -6,13 +6,16 @@ class CustomElevatedButton extends StatelessWidget {
   var height;
 
   CustomElevatedButton({
-    required this.child,
+    this.child,
     this.height: 50.0,
     this.style,
-    required this.onPressed,
+    this.onPressed,
+    textColor,
+    this.label,
   });
   final Widget child;
   final VoidCallback onPressed;
+  final Widget label;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +24,7 @@ class CustomElevatedButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onPressed,
         style: style,
-        child: child,
+        child: null,
       ),
     );
   }
